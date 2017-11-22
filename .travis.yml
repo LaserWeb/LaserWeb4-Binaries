@@ -1,0 +1,46 @@
+# Use Node 7 on OSX platform
+os: osx
+language: node_js
+node_js:
+  - "7"
+
+# Limit branches to prevent double builds
+only: master
+branches:
+  except:
+    - /v[0-9]/
+
+# Speed up build using cache
+cache: yarn
+
+# Build distribution
+before_install:
+  - ./build.osx.sh
+  - pwd
+  - mkdir ../LaserWeb/dist
+  - cd ../lw.comm-server/dist/mac
+  - ls -la
+  - mv *.dmg ../../../LaserWeb/dist
+  - cd ../../../LaserWeb/dist
+  - ls -la
+  - cd ..
+
+# Run a test
+script:
+  - npm test
+
+# Clean up files we dont want
+after_success:
+  - rm -rf node_modules
+  - rm -rf dist/linux-unpacked
+  - rm -rf app
+
+deploy:
+  provider: releases
+  api_key:
+    secure: ""
+  file_glob: true
+  file: dist/**/*
+  skip_cleanup: true
+  on:
+    branch: master

@@ -1,0 +1,52 @@
+# Test against the latest version of this Node.js version
+environment:
+  nodejs_version: "6"
+
+# Do not build tags (prevents double builds)
+skip_tags: true
+
+# Install scripts. (runs after repo cloning)
+install:
+  # Get the latest stable version of Node.js or io.js
+  - ps: Install-Product node $env:nodejs_version
+  # Run batch
+  - ./build.win.bat
+
+# Add caching to speed up build
+cache:
+  - "%LOCALAPPDATA%\\Yarn"
+
+# Post-install test scripts.
+test_script:
+  # Output useful info for debugging.
+  - node --version
+  - npm --version
+  # run tests
+  - npm test
+
+on_finish:
+  - echo %cd%
+  - rd /s /q ..\LaserWeb4\node_modules
+  - rd /s /q ..\lw.comm-server\node_modules
+  - rd /s /q ..\lw.comm-server\dist
+
+# Don't actually build.
+build: off
+
+# Add some artifacts, these are things we want to keep
+artifacts:
+  - path: dist\*
+    name: LocalDist
+
+# Deploy to the cloud
+deploy:
+  release: $(appveyor_build_version)
+  description: 'LaserWeb for Mac and PC (`$(TARGET_UI_BRANCH)`).\n\n>$(GIT_LOGS)'
+  provider: GitHub
+  auth_token:
+    secure:  # your encrypted token from GitHub
+  artifact: LocalDist            # upload all NuGet packages to release assets
+  draft: false
+  prerelease: false
+  on:
+    branch: master               # release from master branch only

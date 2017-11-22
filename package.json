@@ -1,0 +1,19 @@
+{
+  "name": "laserweb-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Laserweb/LaserWeb-binaries.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LaserWeb/LaserWeb-binaries/issues"
+  },
+  "homepage": "https://github.com/LaserWeb/LaserWeb-binaries#readme"
+}

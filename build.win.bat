@@ -54,7 +54,7 @@ IF NOT EXIST "lw.comm-server" (
 CALL npm run dist
 
 :: Move release file to distribution directory
-xcopy dist\*.exe ..\laserweb\dist\
-cd ..\laserweb\dist
+xcopy dist\*.exe ..\LaserWeb4-Binaries\dist\
+cd  ..\LaserWeb4-Binaries\dist\
 dir
 cd ..

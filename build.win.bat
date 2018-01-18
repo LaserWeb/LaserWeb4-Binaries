@@ -51,8 +51,7 @@ IF NOT EXIST "lw.comm-server" (
 )
 
 :: Copy web front-end + build server component
-CALL npm run distwinx86
-CALL npm run distwinx64
+CALL npm run dist
 
 :: Move release file to distribution directory
 xcopy dist\*.exe ..\LaserWeb4-Binaries\dist\

@@ -18,7 +18,7 @@ dir
 :: Download LaserWeb UI / install modules
 IF NOT EXIST "LaserWeb4" (
     git clone https://github.com/Laserweb/LaserWeb4.git
-    cd LaserWeb4.1
+    cd LaserWeb4
     git checkout %TARGET_UI_BRANCH%
     CALL yarn
     CALL npm run installdev
@@ -29,7 +29,7 @@ IF NOT EXIST "LaserWeb4" (
 
 :: Override files
 ::echo "Applying file overrides.."
-::xcopy /s /f /y ..\LaserWeb\overrides\LaserWeb4.1 .
+::xcopy /s /f /y ..\LaserWeb\overrides\LaserWeb4 .
 
 :: Save Git log to Env variable
 git log --pretty=format:"[%%h](https://github.com/Laserweb/LaserWeb4/commit/%%H)%%x09%%an%%x09%%ad%%x09%%s" --date=short -10 > git.log.output

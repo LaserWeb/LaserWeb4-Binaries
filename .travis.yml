@@ -15,6 +15,7 @@ cache: yarn
 
 # Build distribution
 before_install:
+  - npm install -g ncp
   - ./build.osx.sh
   - pwd
   - mkdir ../LaserWeb/dist

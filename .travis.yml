@@ -17,11 +17,11 @@ cache: yarn
 before_install:
   - ./build.osx.sh
   - pwd
-  - mkdir ../LaserWeb/dist
+  - mkdir ../LaserWeb4-Binaries/dist
   - cd ../lw.comm-server/dist/mac
   - ls -la
-  - mv *.dmg ../../../LaserWeb/dist
-  - cd ../../../LaserWeb/dist
+  - mv *.dmg ../../../LaserWeb4-Binaries/dist
+  - cd ../../../LaserWeb4-Binaries/dist
   - ls -la
   - cd ..
 

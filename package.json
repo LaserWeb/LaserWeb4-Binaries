@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/LaserWeb/LaserWeb-binaries/issues"
   },
-  "homepage": "https://github.com/LaserWeb/LaserWeb-binaries#readme"
+  "homepage": "https://github.com/LaserWeb/LaserWeb-binaries#readme",
+  "dependencies": {
+    "ncp": "^2.0.0"
+  }
 }

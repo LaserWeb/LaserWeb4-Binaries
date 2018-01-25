@@ -46,7 +46,7 @@ deploy:
   auth_token:
     secure:  yGBLBhF4ye007oEUaBk0r+IQD5BczKPVQ4JSflT3FZrBb0kFyU6QsyF86FXGE+Vi
   artifact: LocalDist            # upload all NuGet packages to release assets
-  draft: true
+  draft: false
   prerelease: false
   on:
     branch: master               # release from master branch only

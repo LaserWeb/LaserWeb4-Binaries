@@ -5,11 +5,9 @@ node_js:
   - "7"
 
 # Limit branches to prevent double builds
-only: master
 branches:
-  except:
-    - /v[0-9]/
-
+  only: master
+  
 # Speed up build using cache
 cache: yarn
 
@@ -43,4 +41,4 @@ deploy:
   file: dist/**/*
   skip_cleanup: true
   on:
-    all_branches: true
+    branch: master

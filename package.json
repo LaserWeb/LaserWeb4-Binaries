@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "start": "./node_modules/.bin/electron ."
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,58 @@
   },
   "homepage": "https://github.com/LaserWeb/LaserWeb-binaries#readme",
   "dependencies": {
+    "ncp": "^2.0.0",
+    "laserweb": "github:laserweb/laserweb4#dev-es6",
+    "lw.comm-server": "github:LaserWeb/lw.comm-server"
+  },
+  "devDependencies": {
+    "copyfiles": "^1.2.0",
+    "electron": "^1.6.x",
+    "electron-builder": "^14.1.1",
+    "electron-rebuild": "^1.5.7",
     "ncp": "^2.0.0"
-  }
+  },
+  "build": {
+    "appId": "xyz.laserweb",
+    "productName": "LaserWeb",
+    "asar": true,
+    "files": [
+      "**/*"
+    ],
+    "mac": {
+      "icon": "build/icon.icns",
+      "category": "public.app-category.graphics-design"
+    },
+    "dmg": {
+      "icon": "build/icon.icns",
+      "contents": [
+        {
+          "x": 410,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 130,
+          "y": 150,
+          "type": "file"
+        }
+      ]
+    },
+    "linux": {
+      "category": "Graphics"
+    }
+  },
+  "keywords": [
+    "laserweb",
+    "cncweb",
+    "grbl",
+    "smoothieware",
+    "tinyg",
+    "usb",
+    "serial",
+    "ethernet",
+    "gateway",
+    "ESP8266"
+  ]
 }

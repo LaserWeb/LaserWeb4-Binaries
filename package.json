@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/LaserWeb/LaserWeb-binaries#readme",
   "dependencies": {
-    "ncp": "^2.0.0",
-    "laserweb": "github:laserweb/laserweb4#dev-es6",
-    "lw.comm-server": "github:LaserWeb/lw.comm-server"
+    "electron-updater": "^2.21.10",
+    "lw.comm-server": "github:LaserWeb/lw.comm-server",
+    "ncp": "^2.0.0"
   },
   "devDependencies": {
     "copyfiles": "^1.2.0",

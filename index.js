@@ -5,6 +5,9 @@ require('lw.comm-server');
 
 // Electron app
 const electron = require('electron');
+const autoUpdater = require("electron-updater").autoUpdater
+      autoUpdater.checkForUpdatesAndNotify();
+      
 // Module to control application life.
 const electronApp = electron.app;
 // Keep a global reference of the window object, if you don't, the window will

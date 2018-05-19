@@ -12,6 +12,8 @@ export LW_DIR="Laserweb4"
 
 echo "Targetting UI Branch: $TARGET_UI_BRANCH"
 
+yarn
+
 # Commence
 cd ../
 

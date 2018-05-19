@@ -6,13 +6,17 @@
 
 :: Set UnicodeData.txt path to work around https://github.com/dodo/node-unicodetable/issues/16
 set NODE_UNICODETABLE_UNICODEDATA_TXT=%CD%\UnicodeData\UnicodeData.txt
-set LW_DIR=Laserweb4 
+set LW_DIR=Laserweb4
+set CURRENT_DIR=%CD%
 
 :: Set target branch
 set /p TARGET_UI_BRANCH=<BRANCH
 echo "Targetting UI Branch: %TARGET_UI_BRANCH%"
 
 :: Commence
+
+CALL yarn
+
 cd ..
 dir
 
@@ -38,18 +42,25 @@ set /p GIT_LOGS=<git.log.output
 
 git describe --abbrev=0 --tags > ui_version.output
 set /p UI_VERSION=<ui_version.output
-set /p SERVER_VERSION_FULL=<node_modules\lw.comm-server\version.txt
-set SERVER_VERSION = %SERVER_VERSION_FULL:~-3%
+set /p SERVER_VERSION=<node_modules\lw.comm-server\version.txt
 
 :: Bundle LaserWeb app using webpack
 CALL npm run bundle-dev
 :: Copy web front-end
-cd %CD%
-git tag -f %UI_VERSION%-%$SERVER_VERSION%
-xcopy ..\%LW_DIR%\dist .\app
 
-.\node_modules\.bin\electron-rebuild
-.\node_modules\.bin\build --em.version=%UI_VERSION%-%$SERVER_VERSION% -p never
+cd ..\Laserweb4-Binaries
+::cd ..\%CURRENT_DIR%
+
+
+::git tag -f %UI_VERSION%-%SERVER_VERSION%
+set LW_DIST=..\%LW_DIR%\dist
+set LW_VERSION=%UI_VERSION:~1%%SERVER_VERSION:~-3%
+xcopy /i /y "%LW_DIST%" .\app
+
+echo "LaserWeb4 %LW_VERSION%"
+
+CALL .\node_modules\.bin\electron-rebuild
+CALL .\node_modules\.bin\build --em.version=%LW_VERSION% -p never --ia32
 
 :: Move release file to distribution directory
 xcopy dist\*.exe ..\LaserWeb4-Binaries\dist\

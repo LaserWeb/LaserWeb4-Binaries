@@ -24,7 +24,6 @@ if [ ! -d $LW_DIR ]; then
   git checkout $TARGET_UI_BRANCH
   yarn
   npm run installdev
-  cd ..
 else
   cd $LW_DIR
   echo "LaserWeb4 folder exists, skip download.."
@@ -32,6 +31,8 @@ fi
 
 export UI_VERSION=$(git describe --abbrev=0 --tags)
 export SERVER_VERSION=$(cat ./node_modules/lw.comm-server/version.txt | cut -c 3-6)
+
+cd ..
 
 # Bundle LaserWeb app using webpack
 npm run bundle-dev

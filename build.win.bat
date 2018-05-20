@@ -57,6 +57,8 @@ set LW_DIST=..\%LW_DIR%\dist
 set LW_VERSION=%UI_VERSION:~1%-%SERVER_VERSION:~-3%
 xcopy /i /y "%LW_DIST%" .\app
 
+echo %LW_VERSION%>.\app\VERSION
+
 echo "LaserWeb4 %LW_VERSION%"
 
 CALL .\node_modules\.bin\electron-rebuild

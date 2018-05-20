@@ -25,12 +25,12 @@ script:
   - npm test
 
 # Clean up files we dont want
-after_success:
+before_deploy:
+  - git tag "$(cat ./app/VERSION)"
   - rm -rf node_modules
   - rm -rf dist/linux-unpacked
   - rm -rf app
-before_deploy:
-   - git tag "$(cat ./app/VERSION)"
+   
 deploy:
   provider: releases
   api_key: 

@@ -14,14 +14,11 @@ cache: yarn
 # Build distribution
 before_install:
   - ./build.osx.sh
-  - pwd
-  - mkdir -p ../LaserWeb4-Binaries/dist
-  - cd ../lw.comm-server/dist/mac
-  - ls -la
-  - mv *.dmg ../../../LaserWeb4-Binaries/dist
-  - cd ../../../LaserWeb4-Binaries/dist
-  - ls -la
-  - cd ..
+ # - pwd
+ # - mkdir -p ../LaserWeb4-Binaries/dist
+ # - cd ../../../LaserWeb4-Binaries/dist
+ # - ls -la
+ # - cd ..
 
 # Run a test
 script:

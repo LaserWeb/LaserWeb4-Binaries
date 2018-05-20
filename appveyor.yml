@@ -37,6 +37,10 @@ artifacts:
   - path: dist\*
     name: LocalDist
 
+
+before_deploy:
+  - ps: $env:lw_build_version =  Get-Content ".\app\VERSION"
+
 # Deploy to the cloud
 deploy:
   release: $(lw_build_version)

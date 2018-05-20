@@ -57,6 +57,8 @@ set LW_DIST=..\%LW_DIR%\dist
 set LW_VERSION=%UI_VERSION:~1%-%SERVER_VERSION:~-3%
 xcopy /i /y "%LW_DIST%" .\app
 
+SET /P appveyor_build_version=%LW_VERSION%
+
 echo "LaserWeb4 %LW_VERSION%"
 
 CALL .\node_modules\.bin\electron-rebuild
@@ -67,3 +69,5 @@ xcopy dist\*.exe ..\LaserWeb4-Binaries\dist\
 cd  ..\LaserWeb4-Binaries\dist\
 dir
 cd ..
+
+

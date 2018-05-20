@@ -38,6 +38,7 @@ cd ../$CURRENT_DIR
 git tag -f $UI_VERSION-$SERVER_VERSION
 cp -R ../$LW_DIR/dist ./app
 
+echo $UI_VERSION-$SERVER_VERSION>./app/VERSION
 # Copy web front-end + build server component
 ./node_modules/.bin/electron-rebuild
 ./node_modules/.bin/build --em.version=$UI_VERSION-$SERVER_VERSION -p never

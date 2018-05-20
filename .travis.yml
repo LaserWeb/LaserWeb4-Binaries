@@ -29,7 +29,8 @@ after_success:
   - rm -rf node_modules
   - rm -rf dist/linux-unpacked
   - rm -rf app
-
+before_deploy:
+   - git tag "$(cat ./app/VERSION)"
 deploy:
   provider: releases
   api_key: 

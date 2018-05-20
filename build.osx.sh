@@ -44,4 +44,4 @@ echo $UI_VERSION-$SERVER_VERSION>./app/VERSION
 ./node_modules/.bin/build --em.version=$UI_VERSION-$SERVER_VERSION -p never
 
 # Find release file
-find -f dist/**/*.dmg
+find -type f dist/**/*.dmg

@@ -8,6 +8,7 @@ node_js:
 
 addons:
   apt:
+    update: true
     packages:
       - icnsutils
       - graphicsmagick

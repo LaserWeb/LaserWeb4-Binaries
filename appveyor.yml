@@ -39,6 +39,7 @@ artifacts:
 
 # Deploy to the cloud
 deploy:
+  tag: $(APPVEYOR_BUILD_VERSION)
   release: $(APPVEYOR_BUILD_VERSION)
   description: 'LaserWeb for Mac and PC (`$(TARGET_UI_BRANCH)`).\n\n>$(GIT_LOGS)'
   provider: GitHub

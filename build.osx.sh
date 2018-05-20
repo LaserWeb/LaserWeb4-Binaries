@@ -32,8 +32,6 @@ fi
 export UI_VERSION=$(git describe --abbrev=0 --tags)
 export SERVER_VERSION=$(cat ./node_modules/lw.comm-server/version.txt | cut -c 3-6)
 
-cd ..
-
 # Bundle LaserWeb app using webpack
 npm run bundle-dev
 cd ../$CURRENT_DIR

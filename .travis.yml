@@ -6,6 +6,12 @@ language: node_js
 node_js:
   - "7"
 
+addons:
+  apt:
+    packages:
+      - icnsutils
+      - graphicsmagick
+
 # Limit branches to prevent double builds
 branches:
   only: master

@@ -27,8 +27,6 @@ test_script:
 on_finish:
   - echo %cd%
   - rd /s /q ..\LaserWeb4\node_modules
-  - rd /s /q ..\lw.comm-server\node_modules
-  - rd /s /q ..\lw.comm-server\dist
 
 # Don't actually build.
 build: off

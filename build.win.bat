@@ -54,7 +54,7 @@ cd ..\Laserweb4-Binaries
 
 ::git tag -f %UI_VERSION%-%SERVER_VERSION%
 set LW_DIST=..\%LW_DIR%\dist
-set LW_VERSION=%UI_VERSION:~1%%SERVER_VERSION:~-3%
+set LW_VERSION=%UI_VERSION:~1%-%SERVER_VERSION:~-3%
 xcopy /i /y "%LW_DIST%" .\app
 
 echo "LaserWeb4 %LW_VERSION%"

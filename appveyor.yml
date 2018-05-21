@@ -39,7 +39,7 @@ artifacts:
 
 
 before_deploy:
-  - ps: $env:lw_build_version =  Get-Content ".\app\VERSION"
+  - ps: $env:lw_build_version =  Get-Content ".\node_modules\lw.comm-server\app\VERSION"
 
 # Deploy to the cloud
 deploy:

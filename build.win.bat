@@ -21,16 +21,15 @@ cd ..
 dir
 
 :: Download LaserWeb UI / install modules
-IF NOT EXIST %LW_DIR% (
-    git clone https://github.com/Laserweb/LaserWeb4.git %LW_DIR%
-    cd %LW_DIR%
-    git checkout %TARGET_UI_BRANCH%
-    CALL yarn
-    CALL npm run installdev
-) ELSE (
-    echo "LaserWeb4 folder exists, skip download.."
-    cd %LW_DIR%
+IF EXIST %LW_DIR% (
+    rd /s /q  %LW_DIR%
 )
+
+git clone https://github.com/Laserweb/LaserWeb4.git %LW_DIR%
+cd %LW_DIR%
+git checkout %TARGET_UI_BRANCH%
+CALL yarn
+CALL npm run installdev
 
 :: Override files
 ::echo "Applying file overrides.."
@@ -55,9 +54,9 @@ cd ..\Laserweb4-Binaries
 ::git tag -f %UI_VERSION%-%SERVER_VERSION%
 set LW_DIST=..\%LW_DIR%\dist
 set LW_VERSION=%UI_VERSION:~1%-%SERVER_VERSION:~-3%
-xcopy /i /y "%LW_DIST%" .\app
+xcopy /i /y "%LW_DIST%" .\node_modules\lw.comm-server\app
 
-echo %LW_VERSION%>.\app\VERSION
+echo %LW_VERSION%>.\node_modules\lw.comm-server\app\VERSION
 
 echo "LaserWeb4 %LW_VERSION%"
 

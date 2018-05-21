@@ -40,7 +40,8 @@ git tag -f $UI_VERSION-$SERVER_VERSION
 
 ls -la
 
-cp -rf ../$LW_DIR/dist ./node_modules/lw.comm-server/app
+rm -rf ./node_modules/lw.comm-server/app/
+cp -Rf ../$LW_DIR/dist ./node_modules/lw.comm-server/app/
 
 echo $UI_VERSION-$SERVER_VERSION>./node_modules/lw.comm-server/app/VERSION
 # Copy web front-end + build server component

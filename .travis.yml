@@ -35,7 +35,7 @@ before_install:
 
 # Clean up files we dont want
 before_deploy:
-  - git tag -f "$(cat ./node_modules/lw.comm-server/app/VERSION)" 
+  - git tag -f "v$(cat ./node_modules/lw.comm-server/app/VERSION)" 
   - rm -rf node_modules
   - rm -rf dist/linux-unpacked
   - rm -rf app

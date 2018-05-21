@@ -37,6 +37,9 @@ npm run bundle-dev
 cd ../$CURRENT_DIR
 git tag -f $UI_VERSION-$SERVER_VERSION
 # Overwrite app with latest version
+
+ls -la
+
 cp -rf ../$LW_DIR/dist ./node_modules/lw.comm-server/app
 
 echo $UI_VERSION-$SERVER_VERSION>./node_modules/lw.comm-server/app/VERSION

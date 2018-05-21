@@ -31,7 +31,7 @@ before_install:
 
 # Run a test
 #script:
-¢  - npm test
+#  - npm test
 
 # Clean up files we dont want
 before_deploy:

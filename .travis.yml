@@ -7,12 +7,12 @@ language: node_js
 node_js:
   - "7"
 
-#addons:
-#  apt:
-#    update: true
-#    packages:
-#      - icnsutils
-#      - graphicsmagick
+addons:
+  apt:
+    update: true
+    packages:
+      - icnsutils
+      - graphicsmagick
 
 # Limit branches to prevent double builds
 branches:

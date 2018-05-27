@@ -44,6 +44,9 @@ rm -rf ./node_modules/lw.comm-server/app/
 cp -Rf ../$LW_DIR/dist ./node_modules/lw.comm-server/app/
 
 echo $UI_VERSION-$SERVER_VERSION>./node_modules/lw.comm-server/app/VERSION
+
+echo "BUILDING Laserweb $UI_VERSION-$SERVER_VERSION"
+
 # Copy web front-end + build server component
 ./node_modules/.bin/electron-rebuild
 ./node_modules/.bin/build --em.version=$UI_VERSION-$SERVER_VERSION -p never

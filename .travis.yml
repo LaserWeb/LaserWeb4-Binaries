@@ -1,6 +1,7 @@
 # Use Node 7 on OSX platform
 os: 
   - osx
+  - linux
   
 language: node_js
 node_js:

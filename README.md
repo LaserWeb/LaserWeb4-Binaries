@@ -7,4 +7,4 @@ Windows/Mac Users: Download from https://github.com/LaserWeb/LaserWeb4-Binaries/
 
 # Documentation
 
-Head over to [https://cncpro.yurl.ch/](https://cncpro.yurl.ch/)
+Head over to [https://laserweb.yurl.ch/](https://laserweb.yurl.ch/)

@@ -1,9 +1,9 @@
 # LaserWeb4-Binaries
 Installers for LaserWeb4
 
-Linux Users: Download from http://laserweb-release.s3-website-us-east-1.amazonaws.com/
-
-Windows/Mac Users: Download from https://github.com/LaserWeb/LaserWeb4-Binaries/releases
+Windows Users: Download exe from https://github.com/LaserWeb/LaserWeb4-Binaries/releases
+Mac Users: Download dmg from https://github.com/LaserWeb/LaserWeb4-Binaries/releases
+Linux Users: Download AppImage from https://github.com/LaserWeb/LaserWeb4-Binaries/releases
 
 # Documentation
 
